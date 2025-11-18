@@ -26,4 +26,8 @@ public class Controller {
         return "postEndpoint recebeu " + user.username();
     }
 
+    @PostMapping("/postEndpointWithHeader")
+    public String postEndpointWithHeader(@RequestHeader("name") String name){
+        return "postEndpointWithHeader recebeu " + name;
+    }
 }
