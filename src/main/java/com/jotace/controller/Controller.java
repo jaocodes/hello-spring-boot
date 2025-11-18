@@ -1,5 +1,8 @@
 package com.jotace.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -35,4 +38,17 @@ public class Controller {
     public String postEndpointWithHeaders(@RequestHeader Map<String, String> headers){
         return "postEndpointWithHeaders recebeu " + headers.entrySet();
     }
+
+    @GetMapping("/responseEntity/{id}")
+    public ResponseEntity<Object> responseEntity(@PathVariable int id){
+        User user = new User("Jotace");
+        if(id > 5){
+            return ResponseEntity.status(HttpStatus.OK).body(user.username());
+
+        }
+
+        return ResponseEntity.badRequest().body("Número menor que 5");
+
+    }
+
 }
