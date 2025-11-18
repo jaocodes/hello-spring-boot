@@ -19,4 +19,11 @@ public class Controller {
     public String queryParamsTwo(@RequestParam Map<String, String> allParams){
         return "O parâmetro via Query Params é " + allParams.entrySet();
     }
+    record User(String username){};
+
+    @PostMapping("/postEndpoint")
+    public String postEndpoint(@RequestBody User user){
+        return "postEndpoint recebeu " + user.username();
+    }
+
 }
