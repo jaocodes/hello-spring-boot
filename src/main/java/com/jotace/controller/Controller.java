@@ -30,4 +30,9 @@ public class Controller {
     public String postEndpointWithHeader(@RequestHeader("name") String name){
         return "postEndpointWithHeader recebeu " + name;
     }
+
+    @PostMapping("/postEndpointWithHeaders")
+    public String postEndpointWithHeaders(@RequestHeader Map<String, String> headers){
+        return "postEndpointWithHeaders recebeu " + headers.entrySet();
+    }
 }
