@@ -1,4 +1,4 @@
-package com.jotace.first_project_spring_boot;
+package com.jotace.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
